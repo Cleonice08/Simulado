@@ -1,0 +1,12 @@
+.cards-container{
+    width: 50%;
+    margin: auto;
+}
+
+.card-body{
+    background-color: rgba(43, 40, 40, 0.13);
+}
+
+.alert-success, .alert-danger {
+    margin: 1% 0;
+}
