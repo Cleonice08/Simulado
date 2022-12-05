@@ -14,7 +14,7 @@ include "cabecalho.php";
 
         while ($linha = mysqli_fetch_array($resultado)) {
         ?>
-            <div class="card text-white bg-dark mb-3 mt-4">
+            <div class="card text-black mb-3 mt-4">
                 <div class="card-header">
                     <?php echo $linha["pergunta"]; ?>
                 </div>
@@ -62,7 +62,7 @@ include "cabecalho.php";
             <?php
         }
         ?>
-            <input class="btn btn-dark" type="submit" value="Enviar">
+            <input class="botao btn" type="submit" value="Enviar">
         </form>
     </div>
 

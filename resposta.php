@@ -9,23 +9,23 @@ include "cabecalho.php";
 
             function obterDefinicaoReposta($questao, $alternativaRespondida, $alternativaFormulario)
             {
-                if (obterAlternativaCorretaSelecionada($questao, $alternativaRespondida, $alternativaFormulario)) 
+                if (alternativaCorretaSelecionada($questao, $alternativaRespondida, $alternativaFormulario)) 
                     return ['alert alert-success', '<span>CORRETA! - </span>'];
                 
                 
-                if (obterAlternativaIncorretaSelecionada($questao, $alternativaRespondida, $alternativaFormulario))
+                if (alternativaIncorretaSelecionada($questao, $alternativaRespondida, $alternativaFormulario))
                     return ['alert alert-danger', '<span>SUA RESPOSTA - </span>'];
             
                 return ['', ''];
             }
 
-            function obterAlternativaCorretaSelecionada($questao, $alternativaRespondida, $alternativaFormulario) {
+            function alternativaCorretaSelecionada($questao, $alternativaRespondida, $alternativaFormulario) {
                 return alternativaCorreta($questao, $alternativaRespondida) 
                             && strtoupper($alternativaRespondida == $alternativaFormulario) 
                             || alternativaCorreta($questao, $alternativaFormulario);
             }
 
-            function obterAlternativaIncorretaSelecionada($questao, $alternativaRespondida, $alternativaFormulario) {
+            function alternativaIncorretaSelecionada($questao, $alternativaRespondida, $alternativaFormulario) {
                 return !alternativaCorreta($questao, $alternativaRespondida) && strtoupper($alternativaRespondida) == strtoupper($alternativaFormulario);
             }
 
@@ -51,7 +51,7 @@ include "cabecalho.php";
                     $questao = obterQuestaoPorQuestaoId($questaoId);
                     definirPontuacao($questao, $alternativa);
                     ?>
-                    <div class="card text-white bg-dark mb-3 mt-4">
+                    <div class="card text-black mb-3 mt-4">
                         <div class="card-header">
                             <?php echo $questao->pergunta; ?>
                         </div>
